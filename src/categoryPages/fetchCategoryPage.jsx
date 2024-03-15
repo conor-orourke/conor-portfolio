@@ -23,7 +23,22 @@ export const useFetchCategoryPage = (contentId) => {
 
           const categoryPageCardId = item.sys.id;
           const cardImg = exampleWorkImage?.fields?.file?.url;
-          const portfolioText = documentToReactComponents(exampleWorkText);
+
+          const options = {
+            renderText: (text) => {
+              return text.split("\n").reduce((children, textSegment, index) => {
+                return [
+                  ...children,
+                  index > 0 && <br key={index} />,
+                  textSegment,
+                ];
+              }, []);
+            },
+          };
+          const portfolioText = documentToReactComponents(
+            exampleWorkText,
+            options
+          );
 
           return {
             categoryPageCardId,

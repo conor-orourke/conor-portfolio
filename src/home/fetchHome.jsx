@@ -16,9 +16,20 @@ export const useFetchHome = () => {
         const { heroText, aboutMe, getInTouch } = item.fields;
         const id = item.sys.id;
 
-        const heroTxt = documentToReactComponents(heroText);
-        const aboutTxt = documentToReactComponents(aboutMe);
-        const getInTouchTxt = documentToReactComponents(getInTouch);
+        const options = {
+          renderText: (text) => {
+            return text.split("\n").reduce((children, textSegment, index) => {
+              return [
+                ...children,
+                index > 0 && <br key={index} />,
+                textSegment,
+              ];
+            }, []);
+          },
+        };
+        const heroTxt = documentToReactComponents(heroText, options);
+        const aboutTxt = documentToReactComponents(aboutMe, options);
+        const getInTouchTxt = documentToReactComponents(getInTouch, options);
 
         return { id, heroTxt, aboutTxt, getInTouchTxt };
       });
