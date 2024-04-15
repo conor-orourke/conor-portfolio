@@ -1,5 +1,6 @@
 import { useFetchHome } from "./fetchHome";
 import Categories from "../categoryMenu/Categories";
+import ScrollUp from "../categoryPages/BackToTopBtn";
 
 const Home = () => {
   const { loading, home } = useFetchHome();
@@ -13,18 +14,14 @@ const Home = () => {
       <div className="wrapper">
         {home.map((homePage) => {
           const { id, heroTxt, aboutTxt, getInTouchTxt } = homePage;
-          // console.log(id);
+
           return (
             <article key={id} className="title">
-              <div target="blank" rel="noreferrer" className="hero">
+              <div className="hero">
                 <div>{heroTxt}</div>
               </div>
               <Categories />
-              <div
-                target="blank"
-                rel="noreferrer"
-                className="hero aboutMe-hero"
-              >
+              <div className="hero aboutMe-hero">
                 <div>{aboutTxt}</div>
               </div>
               <div
@@ -34,6 +31,7 @@ const Home = () => {
               >
                 <div>{getInTouchTxt}</div>
               </div>
+              <ScrollUp />
             </article>
           );
         })}

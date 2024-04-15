@@ -186,3 +186,34 @@ div {
     transform: translateX(-150px);
   }
 }
+
+/* ==========back to home triangle========== */
+.back-to-home-container {
+  /* position: absolute; */
+  /* z-index: 1; */
+}
+
+.back-to-home-container .back-to-home {
+  position: fixed;
+  right: 0;
+  top: 10px;
+}
+
+a.back-to-home {
+}
+
+.back-to-home-btn {
+  transform: rotate(-90deg);
+  font-size: 1000%;
+  stroke-width: 0;
+  color: var(--menuLinksColor);
+  fill: var(--menuLinksColor);
+}
+
+/* ============= MEDIA QUERIES =============== */
+
+@media screen and (max-width: 450px) {
+  .back-to-home-btn {
+    font-size: 500%;
+  }
+}
