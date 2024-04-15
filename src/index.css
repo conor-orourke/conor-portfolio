@@ -11,10 +11,6 @@
   scroll-behavior: smooth;
 }
 
-*/ html {
-  font-size: 100%;
-} /*16px*/
-
 :root {
   /* colors */
   --textColor: #000000;
@@ -36,9 +32,9 @@ body {
 }
 
 p {
-  /* font-size: clamp(16px, 2vw, 18px); */
   margin: 0;
 }
+
 a {
   text-decoration: none;
   color: var(--hyperlinksColor);
@@ -188,18 +184,11 @@ div {
 }
 
 /* ==========back to home triangle========== */
-.back-to-home-container {
-  /* position: absolute; */
-  /* z-index: 1; */
-}
 
 .back-to-home-container .back-to-home {
   position: fixed;
   right: 0;
   top: 10px;
-}
-
-a.back-to-home {
 }
 
 .back-to-home-btn {
