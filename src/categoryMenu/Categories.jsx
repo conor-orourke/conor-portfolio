@@ -1,8 +1,15 @@
-import { useFetchCategoryPage } from "../categoryPages/fetchCategoryPage";
 import { Link } from "react-router-dom";
 import { LuTriangleRight } from "react-icons/lu";
+import { useFetchCategories } from "./fetchCategories";
 
 const Categories = () => {
+  const { categoriesMenu } = useFetchCategories();
+  const categoriesMenuData = categoriesMenu[0];
+  const firstLink = categoriesMenuData?.firstMenu?.fields?.contentMenuTitle;
+  const secondLink = categoriesMenuData?.secondMenu?.fields?.contentMenuTitle;
+  const thirdLink = categoriesMenuData?.thirdMenu?.fields?.contentMenuTitle;
+  const fourthLink = categoriesMenuData?.fourthMenu?.fields?.contentMenuTitle;
+
   return (
     <>
       <section className="back-to-home-container">
@@ -14,19 +21,19 @@ const Categories = () => {
         <div className="categories">
           <span>I write </span>
           <Link to="/copywriting" className="cat-link ">
-            Copy
+            {firstLink}
           </Link>
           <span>, </span>
           <Link to="/ux-writing" className="cat-link ">
-            UX
+            {secondLink}
           </Link>
           <span>, </span>
           <Link to="/articles" className="cat-link ">
-            Articles
+            {thirdLink}
           </Link>
           <span> and </span>
           <Link to="/translation" className="cat-link ">
-            Translations
+            {fourthLink}
           </Link>
         </div>
       </section>

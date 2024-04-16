@@ -146,8 +146,11 @@ a:hover.cat-link {
   color: hotpink !important;
 } */
 
-/* a:visited.cat-link {
+/* a:active.cat-link {
   color: hotpink !important;
+} */
+/* a:visited.cat-link {
+  color: brown !important;
 } */
 
 /* .cat-link.a:visited {
