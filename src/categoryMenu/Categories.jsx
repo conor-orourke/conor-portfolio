@@ -20,19 +20,19 @@ const Categories = () => {
       <section className="categories-container">
         <div className="categories">
           <span>I write </span>
-          <Link to="/copywriting" className="cat-link ">
+          <Link to="/COPY" className="cat-link">
             {firstLink}
           </Link>
           <span>, </span>
-          <Link to="/ux-writing" className="cat-link ">
+          <Link to="/UX" className="cat-link">
             {secondLink}
           </Link>
           <span>, </span>
-          <Link to="/articles" className="cat-link ">
+          <Link to="/ARTICLES" className="cat-link ">
             {thirdLink}
           </Link>
-          <span> and </span>
-          <Link to="/translation" className="cat-link ">
+          <span>, and </span>
+          <Link to="/TRANSLATIONS" className="cat-link ">
             {fourthLink}
           </Link>
         </div>
