@@ -1,4 +1,5 @@
 import { useFetchCategoryPage } from "./fetchCategoryPage";
+import { Link } from "react-router-dom";
 import Categories from "../categoryMenu/Categories";
 import ScrollUp from "./BackToTopBtn";
 
@@ -19,9 +20,9 @@ const Articles = () => {
           return (
             <article key={categoryPageId}>
               <div className="page">
-                <div className="title">
+                <Link to="/" className="cat-link-title">
                   <h1>{contentPageTitle}</h1>
-                </div>
+                </Link>
                 <Categories />
                 <div className="cards-container">
                   {categoryPageCards.map((card) => {

@@ -1,4 +1,5 @@
 import { useFetchHome } from "./fetchHome";
+import { Link } from "react-router-dom";
 import Categories from "../categoryMenu/Categories";
 import ScrollUp from "../categoryPages/BackToTopBtn";
 
@@ -16,10 +17,10 @@ const Home = () => {
           const { id, heroTxt, aboutTxt, getInTouchTxt } = homePage;
 
           return (
-            <article key={id} className="title">
-              <div className="hero">
+            <article key={id} className="title ">
+              <Link to="/" className="cat-link-title">
                 <div>{heroTxt}</div>
-              </div>
+              </Link>
               <Categories />
               <div className="hero aboutMe-hero">
                 <div>{aboutTxt}</div>
@@ -41,3 +42,8 @@ const Home = () => {
 };
 
 export default Home;
+{
+  /* <Link to="/" className="cat-link">
+            Home
+          </Link> */
+}

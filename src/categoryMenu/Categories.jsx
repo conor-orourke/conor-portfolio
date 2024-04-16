@@ -1,3 +1,4 @@
+import { useFetchCategoryPage } from "../categoryPages/fetchCategoryPage";
 import { Link } from "react-router-dom";
 import { LuTriangleRight } from "react-icons/lu";
 
@@ -11,20 +12,21 @@ const Categories = () => {
       </section>
       <section className="categories-container">
         <div className="categories">
-          <Link to="/" className="cat-link">
-            Home
-          </Link>
-          <Link to="/copywriting" className="cat-link">
+          <span>I write </span>
+          <Link to="/copywriting" className="cat-link ">
             Copy
           </Link>
-          <Link to="/ux-writing" className="cat-link">
+          <span>, </span>
+          <Link to="/ux-writing" className="cat-link ">
             UX
           </Link>
-          <Link to="/articles" className="cat-link">
+          <span>, </span>
+          <Link to="/articles" className="cat-link ">
             Articles
           </Link>
-          <Link to="/translation" className="cat-link">
-            Translation
+          <span> and </span>
+          <Link to="/translation" className="cat-link ">
+            Translations
           </Link>
         </div>
       </section>
