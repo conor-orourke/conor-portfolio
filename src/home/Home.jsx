@@ -23,14 +23,14 @@ const Home = () => {
               </Link>
               <Categories />
               <div className="hero aboutMe-hero">
-                <div>{aboutTxt}</div>
+                <div className="hero-heading">{aboutTxt}</div>
               </div>
               <div
                 target="blank"
                 rel="noreferrer"
                 className="hero getInTouch-hero"
               >
-                <div>{getInTouchTxt}</div>
+                <div className="hero-heading">{getInTouchTxt}</div>
               </div>
               <ScrollUp />
             </article>
