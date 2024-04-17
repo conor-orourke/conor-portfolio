@@ -128,11 +128,6 @@ div {
   text-transform: uppercase;
 }
 
-.categories {
-  max-width: 700px;
-  margin-inline: auto;
-}
-
 .cat-link {
   display: inline-flex;
   text-transform: uppercase;
@@ -155,7 +150,6 @@ a:hover.cat-link {
 .getInTouch-hero,
 .aboutMe-hero {
   padding: 32px 8px 0;
-  max-width: 700px;
   margin-inline: auto;
   line-height: 1.5;
 }
