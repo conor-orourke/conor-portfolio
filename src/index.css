@@ -33,6 +33,7 @@ body {
 
 p {
   margin: 0;
+  font-size: clamp(0.875rem, 1.1vw, 1.1rem);
 }
 
 a {
@@ -118,13 +119,18 @@ div {
 /* ==========category menu========== */
 
 .categories-container {
-  padding: 50px 0;
+  padding: 0 8px 32px;
   text-align: center;
   font-size: clamp(1.25rem, 2.5vw, 2.5rem);
   font-family: "Open Sans", sans-serif !important;
   font-style: italic;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.categories {
+  max-width: 700px;
+  margin-inline: auto;
 }
 
 .cat-link {
@@ -148,7 +154,7 @@ a:hover.cat-link {
 
 .getInTouch-hero,
 .aboutMe-hero {
-  padding: 50px 8px 0;
+  padding: 32px 8px 0;
   max-width: 700px;
   margin-inline: auto;
   line-height: 1.5;
@@ -188,6 +194,10 @@ a:hover.cat-link {
 .card-img {
   max-width: 100%;
   border-radius: 10px;
+}
+
+.cat-info {
+  padding: 32px 8px;
 }
 
 /* ==========scroll up========== */

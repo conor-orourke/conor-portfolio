@@ -14,8 +14,22 @@ export const useFetchCategoryPage = (contentId) => {
       });
 
       const categoryPage = response.items.map((item) => {
-        const { contentPageTitle, categoryCards } = item.fields;
+        const { contentPageTitle, contentPageInfo, categoryCards } =
+          item.fields;
         const categoryPageId = item.sys.id;
+
+        const options = {
+          renderText: (text) => {
+            return text.split("\n").reduce((children, textSegment, index) => {
+              return [
+                ...children,
+                index > 0 && <br key={index} />,
+                textSegment,
+              ];
+            }, []);
+          },
+        };
+        const catInfo = documentToReactComponents(contentPageInfo, options);
 
         const categoryPageCards = categoryCards.map((item) => {
           const { exampleWorkTitle, exampleWorkText, exampleWorkImage } =
@@ -51,10 +65,10 @@ export const useFetchCategoryPage = (contentId) => {
         return {
           categoryPageId,
           contentPageTitle,
+          catInfo,
           categoryPageCards,
         };
       });
-
       setCategoryPage(categoryPage);
       setCategoryPageCards(categoryPageCards);
       setLoading(false);

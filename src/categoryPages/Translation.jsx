@@ -14,8 +14,12 @@ const Translation = () => {
     <section className="section">
       <div className="wrapper">
         {categoryPage.map((categoryPage) => {
-          const { categoryPageId, categoryPageCards, contentPageTitle } =
-            categoryPage;
+          const {
+            categoryPageId,
+            categoryPageCards,
+            contentPageTitle,
+            catInfo,
+          } = categoryPage;
 
           return (
             <article key={categoryPageId}>
@@ -24,6 +28,7 @@ const Translation = () => {
                   <h1>{contentPageTitle}</h1>
                 </Link>
                 <Categories />
+                <div className="cat-info">{catInfo}</div>
                 <div className="cards-container">
                   {categoryPageCards.map((card) => {
                     const {
