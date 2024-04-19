@@ -13,6 +13,7 @@ import {
   UxWriting,
   Articles,
   Translation,
+  Legal,
 } from "./categoryMenu/index";
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "TRANSLATIONS",
         element: <Translation />,
+      },
+      {
+        path: "LEGAL",
+        element: <Legal />,
       },
     ],
   },

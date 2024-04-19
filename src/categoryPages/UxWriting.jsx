@@ -6,6 +6,9 @@ import ScrollUp from "./BackToTopBtn";
 const UxWriting = () => {
   const { loading, categoryPage } = useFetchCategoryPage("uxWriting");
 
+  const uxPage = categoryPage[0];
+  const footer = uxPage?.footer;
+
   if (loading) {
     return <section className="loading"></section>;
   }
@@ -19,6 +22,7 @@ const UxWriting = () => {
             categoryPageCards,
             contentPageTitle,
             catInfo,
+            footer,
           } = categoryPage;
 
           return (
@@ -55,12 +59,15 @@ const UxWriting = () => {
                     );
                   })}
                 </div>
-                <ScrollUp />
               </div>
             </article>
           );
         })}
+        <ScrollUp />
       </div>
+      <Link to="/LEGAL" className="footer-wrapper">
+        <div className="footer">{footer}</div>
+      </Link>
     </section>
   );
 };

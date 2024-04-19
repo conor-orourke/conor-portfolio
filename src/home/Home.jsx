@@ -6,6 +6,9 @@ import ScrollUp from "../categoryPages/BackToTopBtn";
 const Home = () => {
   const { loading, home } = useFetchHome();
 
+  const homePage = home[0];
+  const footer = homePage?.footer;
+
   if (loading) {
     return <section className="loading"></section>;
   }
@@ -32,18 +35,16 @@ const Home = () => {
               >
                 <div className="hero-heading">{getInTouchTxt}</div>
               </div>
-              <ScrollUp />
             </article>
           );
         })}
       </div>
+      <ScrollUp />
+      <Link to="/LEGAL" className="footer-wrapper-home">
+        <div className="footer">{footer}</div>
+      </Link>
     </section>
   );
 };
 
 export default Home;
-{
-  /* <Link to="/" className="cat-link">
-            Home
-          </Link> */
-}

@@ -6,6 +6,9 @@ import ScrollUp from "./BackToTopBtn";
 const CopyWriting = () => {
   const { loading, categoryPage } = useFetchCategoryPage("copywriting");
 
+  const copyPage = categoryPage[0];
+  const footer = copyPage?.footer;
+
   if (loading) {
     return <section className="loading"></section>;
   }
@@ -19,6 +22,7 @@ const CopyWriting = () => {
             categoryPageCards,
             contentPageTitle,
             catInfo,
+            footer,
           } = categoryPage;
 
           return (
@@ -55,12 +59,15 @@ const CopyWriting = () => {
                     );
                   })}
                 </div>
-                <ScrollUp />
               </div>
             </article>
           );
         })}
+        <ScrollUp />
       </div>
+      <Link to="/LEGAL" className="footer-wrapper">
+        <div className="footer">{footer}</div>
+      </Link>
     </section>
   );
 };

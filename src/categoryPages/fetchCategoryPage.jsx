@@ -14,7 +14,7 @@ export const useFetchCategoryPage = (contentId) => {
       });
 
       const categoryPage = response.items.map((item) => {
-        const { contentPageTitle, contentPageInfo, categoryCards } =
+        const { contentPageTitle, contentPageInfo, categoryCards, footer } =
           item.fields;
         const categoryPageId = item.sys.id;
 
@@ -67,8 +67,10 @@ export const useFetchCategoryPage = (contentId) => {
           contentPageTitle,
           catInfo,
           categoryPageCards,
+          footer,
         };
       });
+
       setCategoryPage(categoryPage);
       setCategoryPageCards(categoryPageCards);
       setLoading(false);

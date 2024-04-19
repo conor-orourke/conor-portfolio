@@ -239,6 +239,28 @@ a:hover.cat-link {
   fill: var(--menuLinksColor);
 }
 
+/* ==========footer========== */
+
+.footer-wrapper-home {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-wrapper {
+  position: static;
+  width: 100%;
+  text-align: center;
+}
+
+.footer {
+  padding-bottom: 5px;
+  font-size: clamp(0.75rem, 0.9vw, 0.9rem);
+  text-decoration: underline;
+}
+
 /* ============= MEDIA QUERIES =============== */
 
 @media screen and (max-width: 450px) {

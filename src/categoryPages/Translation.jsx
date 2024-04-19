@@ -6,6 +6,9 @@ import ScrollUp from "./BackToTopBtn";
 const Translation = () => {
   const { loading, categoryPage } = useFetchCategoryPage("translation");
 
+  const translationPage = categoryPage[0];
+  const footer = translationPage?.footer;
+
   if (loading) {
     return <section className="loading"></section>;
   }
@@ -19,6 +22,7 @@ const Translation = () => {
             categoryPageCards,
             contentPageTitle,
             catInfo,
+            footer,
           } = categoryPage;
 
           return (
@@ -55,12 +59,15 @@ const Translation = () => {
                     );
                   })}
                 </div>
-                <ScrollUp />
               </div>
             </article>
           );
         })}
+        <ScrollUp />
       </div>
+      <Link to="/LEGAL" className="footer-wrapper">
+        <div className="footer">{footer}</div>
+      </Link>
     </section>
   );
 };

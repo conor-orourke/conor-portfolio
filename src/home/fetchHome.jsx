@@ -13,7 +13,7 @@ export const useFetchHome = () => {
       });
 
       const home = response.items.map((item) => {
-        const { heroText, aboutMe, getInTouch } = item.fields;
+        const { heroText, aboutMe, getInTouch, footer } = item.fields;
         const id = item.sys.id;
 
         const options = {
@@ -31,7 +31,7 @@ export const useFetchHome = () => {
         const aboutTxt = documentToReactComponents(aboutMe, options);
         const getInTouchTxt = documentToReactComponents(getInTouch, options);
 
-        return { id, heroTxt, aboutTxt, getInTouchTxt };
+        return { id, heroTxt, aboutTxt, getInTouchTxt, footer };
       });
 
       setHome(home);
