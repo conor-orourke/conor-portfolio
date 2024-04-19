@@ -19,20 +19,20 @@ const Legal = () => {
   return (
     <section className="section">
       <div className="wrapper">
-        <article key={legalPageID}>
+        <article key={legalPageID} className="min-height">
           <div className="page">
             <Link to="/" className="cat-link-title">
               <h1>{legalPageTitle}</h1>
             </Link>
             <Categories />
             <div className="cat-info">{legalPageInfo}</div>
-            <ScrollUp />
-            <Link to="/LEGAL" className="footer-wrapper-home">
-              <div className="footer">{legalPageFooter}</div>
-            </Link>
           </div>
         </article>
       </div>
+      <ScrollUp />
+      <Link to="/LEGAL" className="footer-wrapper">
+        <div className="footer">{legalPageFooter}</div>
+      </Link>
     </section>
   );
 };

@@ -20,7 +20,7 @@ const Home = () => {
           const { id, heroTxt, aboutTxt, getInTouchTxt } = homePage;
 
           return (
-            <article key={id} className="title ">
+            <article key={id} className="title min-height">
               <Link to="/" className="cat-link-title">
                 <div>{heroTxt}</div>
               </Link>
@@ -40,7 +40,7 @@ const Home = () => {
         })}
       </div>
       <ScrollUp />
-      <Link to="/LEGAL" className="footer-wrapper-home">
+      <Link to="/LEGAL" className="footer-wrapper">
         <div className="footer">{footer}</div>
       </Link>
     </section>
