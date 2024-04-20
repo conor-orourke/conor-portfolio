@@ -132,20 +132,17 @@ div {
   text-transform: uppercase;
 }
 
-.cat-link {
-  display: inline-flex;
-  text-transform: uppercase;
-  color: var(--menuLinksColor);
-  padding: 0 5px;
-  font-family: "Open Sans", sans-serif !important;
-  font-weight: 700 !important;
-  font-style: italic;
+.link-active {
+  color: var(--onHoverColor) !important;
+}
+
+.none {
   text-decoration: underline !important;
+  color: var(--menuLinksColor);
   text-decoration-color: var(--onHoverColor) !important;
 }
 
-a:hover.cat-link {
-  color: var(--onHoverColor) !important;
+a:hover.none {
   text-decoration: none !important;
 }
 
@@ -247,12 +244,13 @@ a:hover.cat-link {
 
 .footer-wrapper {
   position: static;
-  width: 100%;
-  text-align: center;
+  text-align: start;
 }
 
 .footer {
-  padding-bottom: 5px;
+  max-width: 960px;
+  margin-inline: auto;
+  padding: 0 8px 5px;
   font-size: clamp(0.75rem, 0.9vw, 0.9rem);
   text-decoration: underline;
 }

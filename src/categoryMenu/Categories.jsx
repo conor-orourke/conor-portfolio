@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { LuTriangleRight } from "react-icons/lu";
 import { useFetchCategories } from "./fetchCategories";
 
@@ -20,21 +21,33 @@ const Categories = () => {
       <section className="categories-container">
         <div className="categories">
           <span>I write </span>
-          <Link to="/COPY" className="cat-link">
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "none")}
+            to="/COPY"
+          >
             {firstLink}
-          </Link>
+          </NavLink>
           <span>, </span>
-          <Link to="/UX" className="cat-link">
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "none")}
+            to="/UX"
+          >
             {secondLink}
-          </Link>
+          </NavLink>
           <span>, </span>
-          <Link to="/ARTICLES" className="cat-link ">
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "none")}
+            to="/ARTICLES"
+          >
             {thirdLink}
-          </Link>
+          </NavLink>
           <span>, and </span>
-          <Link to="/TRANSLATIONS" className="cat-link ">
+          <NavLink
+            className={({ isActive }) => (isActive ? "link-active" : "none")}
+            to="/TRANSLATIONS"
+          >
             {fourthLink}
-          </Link>
+          </NavLink>
         </div>
       </section>
     </>
