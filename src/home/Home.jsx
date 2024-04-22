@@ -17,7 +17,15 @@ const Home = () => {
     <section className="section">
       <div className="wrapper">
         {home.map((homePage) => {
-          const { id, heroTxt, aboutTxt, getInTouchTxt } = homePage;
+          const {
+            id,
+            logoContainer,
+            logoContainerId,
+            title,
+            heroTxt,
+            aboutTxt,
+            getInTouchTxt,
+          } = homePage;
 
           return (
             <article key={id} className="title min-height">
@@ -25,6 +33,21 @@ const Home = () => {
                 <div>{heroTxt}</div>
               </Link>
               <Categories />
+              <div>
+                <div key={logoContainerId} className="logo-container">
+                  {logoContainer.map((logo) => {
+                    const { logoId, logoImage } = logo;
+                    return (
+                      <img
+                        key={logoId}
+                        src={logoImage}
+                        alt={title}
+                        className="logo"
+                      />
+                    );
+                  })}
+                </div>
+              </div>
               <div className="hero aboutMe-hero">
                 <div className="hero-heading">{aboutTxt}</div>
               </div>

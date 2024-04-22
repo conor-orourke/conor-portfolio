@@ -10,11 +10,16 @@ export const useFetchHome = () => {
     try {
       const response = await client.getEntries({
         content_type: "hero",
+        limit: 1,
+        include: 10,
       });
 
       const home = response.items.map((item) => {
-        const { heroText, aboutMe, getInTouch, footer } = item.fields;
+        const { heroText, heroLogos, aboutMe, getInTouch, footer } =
+          item.fields;
         const id = item.sys.id;
+        const logoContainerId = heroLogos.sys.id;
+        const { logoCard } = heroLogos?.fields;
 
         const options = {
           renderText: (text) => {
@@ -27,11 +32,33 @@ export const useFetchHome = () => {
             }, []);
           },
         };
+
         const heroTxt = documentToReactComponents(heroText, options);
         const aboutTxt = documentToReactComponents(aboutMe, options);
         const getInTouchTxt = documentToReactComponents(getInTouch, options);
 
-        return { id, heroTxt, aboutTxt, getInTouchTxt, footer };
+        const logoContainer = logoCard.map((item) => {
+          const { logo } = item.fields;
+          const logoImage = logo?.fields?.file?.url;
+          const logoId = item.sys.id;
+          const title = logo?.fields?.title;
+
+          return {
+            logoId,
+            title,
+            logoImage,
+          };
+        });
+
+        return {
+          id,
+          heroTxt,
+          logoContainer,
+          logoContainerId,
+          aboutTxt,
+          getInTouchTxt,
+          footer,
+        };
       });
 
       setHome(home);

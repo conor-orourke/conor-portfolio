@@ -167,6 +167,22 @@ a:hover.none {
   font-family: "Open Sans", sans-serif !important;
 }
 
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  justify-content: space-between;
+  max-width: clamp(3.5rem, 17vw, 11rem);
+  align-self: center;
+  filter: grayscale(100%);
+}
+
+.logo:hover {
+  filter: grayscale(0%);
+}
+
 /* ==========cards========== */
 
 .card-container,
@@ -193,6 +209,11 @@ a:hover.none {
 
 .cat-info {
   padding: 32px 8px;
+}
+
+.cat-contact {
+  text-align: center;
+  padding: 64px 8px 0;
 }
 
 /* ==========scroll up========== */

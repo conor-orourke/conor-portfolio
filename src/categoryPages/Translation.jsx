@@ -22,7 +22,7 @@ const Translation = () => {
             categoryPageCards,
             contentPageTitle,
             catInfo,
-            footer,
+            catContact,
           } = categoryPage;
 
           return (
@@ -58,6 +58,7 @@ const Translation = () => {
                       </div>
                     );
                   })}
+                  <div className="cat-contact">{catContact}</div>
                 </div>
               </div>
             </article>
