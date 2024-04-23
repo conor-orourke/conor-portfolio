@@ -168,20 +168,21 @@ a:hover.none {
 }
 
 .logo-container {
-  /* display: block; */
+  display: inline !important;
 }
 
 .logo-links {
-  display: inline;
   vertical-align: middle !important;
-  align-self: center;
+  align-self: center !important;
+  align-items: center !important;
 }
 
 .logo {
   padding: 0 5px;
   max-width: clamp(3.5rem, 17vw, 11rem);
   filter: grayscale(100%);
-  align-self: center;
+  align-self: center !important;
+  align-items: center !important;
 }
 
 .logo:hover {
