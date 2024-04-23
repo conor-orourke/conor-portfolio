@@ -2,6 +2,7 @@ import { useFetchHome } from "./fetchHome";
 import { Link } from "react-router-dom";
 import Categories from "../categoryMenu/Categories";
 import ScrollUp from "../categoryPages/BackToTopBtn";
+import { HashLink } from "react-router-hash-link";
 
 const Home = () => {
   const { loading, home } = useFetchHome();
@@ -21,7 +22,7 @@ const Home = () => {
             id,
             logoContainer,
             logoContainerId,
-            title,
+            logoName,
             heroTxt,
             aboutTxt,
             getInTouchTxt,
@@ -33,20 +34,26 @@ const Home = () => {
                 <div>{heroTxt}</div>
               </Link>
               <Categories />
-              <div>
-                <div key={logoContainerId} className="logo-container">
-                  {logoContainer.map((logo) => {
-                    const { logoId, logoImage } = logo;
-                    return (
+              <div key={logoContainerId} className="logo-container">
+                {logoContainer.map((logo) => {
+                  const { logoId, logoHashLink, logoImage } = logo;
+
+                  return (
+                    <HashLink
+                      smooth
+                      to={logoHashLink}
+                      key={logoId}
+                      className="logo-links"
+                    >
                       <img
                         key={logoId}
                         src={logoImage}
-                        alt={title}
+                        alt={logoName}
                         className="logo"
                       />
-                    );
-                  })}
-                </div>
+                    </HashLink>
+                  );
+                })}
               </div>
               <div className="hero aboutMe-hero">
                 <div className="hero-heading">{aboutTxt}</div>

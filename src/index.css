@@ -168,15 +168,18 @@ a:hover.none {
 }
 
 .logo-container {
-  display: flex;
-  justify-content: space-between;
+  display: block;
+}
+
+.logo-links {
+  vertical-align: middle;
 }
 
 .logo {
-  justify-content: space-between;
+  padding: 0 5px;
   max-width: clamp(3.5rem, 17vw, 11rem);
-  align-self: center;
   filter: grayscale(100%);
+  align-self: center;
 }
 
 .logo:hover {

@@ -14,8 +14,15 @@ export const useFetchCategories = () => {
 
       const categoriesMenu = response.items.map((item) => {
         const { firstMenu, secondMenu, thirdMenu, fourthMenu } = item.fields;
+        const categoriesMenuId = item.sys.id;
 
-        return { firstMenu, secondMenu, thirdMenu, fourthMenu };
+        return {
+          categoriesMenuId,
+          firstMenu,
+          secondMenu,
+          thirdMenu,
+          fourthMenu,
+        };
       });
 
       setCategoriesMenu(categoriesMenu);

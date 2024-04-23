@@ -6,6 +6,7 @@ import { useFetchCategories } from "./fetchCategories";
 const Categories = () => {
   const { categoriesMenu } = useFetchCategories();
   const categoriesMenuData = categoriesMenu[0];
+  const categoriesMenuId = categoriesMenuData?.categoriesMenuId;
   const firstLink = categoriesMenuData?.firstMenu?.fields?.contentMenuTitle;
   const secondLink = categoriesMenuData?.secondMenu?.fields?.contentMenuTitle;
   const thirdLink = categoriesMenuData?.thirdMenu?.fields?.contentMenuTitle;
@@ -18,7 +19,7 @@ const Categories = () => {
           <LuTriangleRight className="back-to-home-btn" />
         </Link>
       </section>
-      <section className="categories-container">
+      <section key={categoriesMenuId} className="categories-container">
         <div className="categories">
           <span>I write </span>
           <NavLink

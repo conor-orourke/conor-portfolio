@@ -43,7 +43,11 @@ const Articles = () => {
                     } = card;
 
                     return (
-                      <div key={categoryPageCardId} className="card-container">
+                      <div
+                        key={categoryPageCardId}
+                        id={categoryPageCardId}
+                        className="card-container"
+                      >
                         <div className="card-left">
                           <h3 className="card-title">{exampleWorkTitle}</h3>
                           <div className="card-text">{portfolioText}</div>

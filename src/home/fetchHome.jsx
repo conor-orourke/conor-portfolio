@@ -38,14 +38,15 @@ export const useFetchHome = () => {
         const getInTouchTxt = documentToReactComponents(getInTouch, options);
 
         const logoContainer = logoCard.map((item) => {
-          const { logo } = item.fields;
+          const { logo, logoHashLink } = item.fields;
           const logoImage = logo?.fields?.file?.url;
           const logoId = item.sys.id;
-          const title = logo?.fields?.title;
+          const logoName = logo?.fields?.title;
 
           return {
             logoId,
-            title,
+            logoHashLink,
+            logoName,
             logoImage,
           };
         });
