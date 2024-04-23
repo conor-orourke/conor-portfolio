@@ -155,28 +155,41 @@ a:hover.none {
   line-height: 1.5;
 }
 
-.getInTouch-hero h2 {
-  text-align: center;
+.getInTouch {
+  text-align: left;
 }
 
-.getInTouch-hero {
-  text-align: left;
+.aboutMe-title {
+  text-align: center;
+  font-family: "Open Sans", sans-serif !important;
+  font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  font-weight: 700;
+}
+
+.getInTouch-container {
+  display: inline-flex;
+  gap: 32px;
+  padding-top: 32px;
+}
+
+.getInTouch-text {
+  width: 66.67%;
+}
+
+.about-img {
+  object-fit: scale-down;
+  width: 33.33%;
 }
 
 .hero-heading h2 {
   font-family: "Open Sans", sans-serif !important;
 }
 
-.logo-container {
-}
-
-.logo-links {
-}
-
 .logo {
   display: inline-block;
   vertical-align: middle !important;
-  padding: 0 5px;
+  padding: 0 10px;
   max-width: clamp(3.5rem, 17vw, 11rem);
   filter: grayscale(100%);
 }
@@ -281,8 +294,23 @@ a:hover.none {
 
 /* ============= MEDIA QUERIES =============== */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
   .back-to-home-btn {
     font-size: 500%;
+  }
+
+  .getInTouch-container {
+    text-align: left;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .getInTouch-text {
+    width: 100%;
+  }
+
+  .about-img {
+    width: 100%;
+    padding-top: 32px;
   }
 }

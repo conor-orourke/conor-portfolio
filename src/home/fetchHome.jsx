@@ -15,11 +15,19 @@ export const useFetchHome = () => {
       });
 
       const home = response.items.map((item) => {
-        const { heroText, heroLogos, aboutMe, getInTouch, footer } =
-          item.fields;
+        const {
+          heroText,
+          heroLogos,
+          aboutMe,
+          aboutMeTitle,
+          aboutMeImage,
+          getInTouch,
+          footer,
+        } = item.fields;
         const id = item.sys.id;
         const logoContainerId = heroLogos.sys.id;
         const { logoCard } = heroLogos?.fields;
+        const aboutMeImg = aboutMeImage?.fields?.file?.url;
 
         const options = {
           renderText: (text) => {
@@ -57,6 +65,8 @@ export const useFetchHome = () => {
           logoContainer,
           logoContainerId,
           aboutTxt,
+          aboutMeTitle,
+          aboutMeImg,
           getInTouchTxt,
           footer,
         };

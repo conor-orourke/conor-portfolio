@@ -25,6 +25,8 @@ const Home = () => {
             logoName,
             heroTxt,
             aboutTxt,
+            aboutMeTitle,
+            aboutMeImg,
             getInTouchTxt,
           } = homePage;
 
@@ -58,12 +60,18 @@ const Home = () => {
               <div className="hero aboutMe-hero">
                 <div className="hero-heading">{aboutTxt}</div>
               </div>
-              <div
-                target="blank"
-                rel="noreferrer"
-                className="hero getInTouch-hero"
-              >
-                <div className="hero-heading">{getInTouchTxt}</div>
+              <div className="getInTouch-hero getInTouch">
+                <div className="aboutMe-title">{aboutMeTitle}</div>
+                <div className="getInTouch-container">
+                  <div className="hero-heading getInTouch-text">
+                    {getInTouchTxt}
+                  </div>
+                  <img
+                    src={aboutMeImg}
+                    alt="Conor O'Rourke"
+                    className="about-img"
+                  />
+                </div>
               </div>
             </article>
           );
